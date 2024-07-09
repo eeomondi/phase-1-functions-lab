@@ -1,17 +1,19 @@
-require ( './helpers.js' );
+
+const assert = require('chai').assert;
+const distanceFromHqInBlocks = require('./index').distanceFromHqInBlocks;
 
 describe('index.js', function() {
   describe('distanceFromHqInBlocks()', function() {
     it('returns a distance in blocks', function() {
-      expect(distanceFromHqInBlocks(43)).to.equal(1);
+      assert.equal(distanceFromHqInBlocks(43)).to.equal(1);
     });
 
     it('returns a distance in blocks', function() {
-      expect(distanceFromHqInBlocks(50)).to.equal(8);
+      assert.equal(distanceFromHqInBlocks(50)).to.equal(8);
     });
 
     it('calculates distances below 42nd street', function() {
-      expect(distanceFromHqInBlocks(34)).to.equal(8);
+      assert.equal(distanceFromHqInBlocks(34)).to.equal(8);
     });
   });
 
